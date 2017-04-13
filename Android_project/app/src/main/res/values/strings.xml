@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Location Scannert</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_google">GoogleActivity</string>
+    <string name="title_activity_home">HomeActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="facebook_app_id">161297281058649</string>
+    <string name="fb_login_protocol_scheme">fb161297281058649</string>
+    <string name="invitation_title">download my app</string>
+    <string name="invitation_message">download my app</string>
+    <string name="invitation_cta">play store link</string>
+</resources>

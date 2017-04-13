@@ -1,0 +1,67 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    >
+
+    <com.dlazaro66.qrcodereaderview.QRCodeReaderView
+        android:id="@+id/qrdecoderview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        tools:layout_editor_absoluteY="8dp"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <com.example.rahul.qr_code_scanner.PointsOverlayView
+        android:id="@+id/points_overlay_view"
+        android:layout_width="0dp"
+        android:layout_height="495dp"
+        tools:layout_editor_absoluteY="8dp"
+        tools:layout_editor_absoluteX="8dp" />
+
+    <TextView
+        android:background="#55000000"
+        android:id="@+id/result_text_view"
+        android:layout_width="0dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:padding="16dp"
+        android:textSize="14sp"
+        android:textColor="#ffffff"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <CheckBox
+        android:background="#99000000"
+        android:layout_width="368dp"
+        android:layout_height="wrap_content"
+        android:text="On/Off flashlight"
+        android:layout_alignParentBottom="true"
+        android:textSize="14sp"
+        android:padding="16dp"
+        android:textColor="#ffffff"
+        android:id="@+id/flashlight_checkbox"
+        android:checked="false"
+        tools:layout_editor_absoluteY="463dp"
+        tools:layout_editor_absoluteX="8dp" />
+
+    <CheckBox
+        android:background="#99000000"
+        android:layout_width="368dp"
+        android:layout_height="wrap_content"
+        android:text="On/Off QR decoding"
+        android:layout_above="@+id/flashlight_checkbox"
+        android:textSize="14sp"
+        android:padding="16dp"
+        android:textColor="#ffffff"
+        android:id="@+id/enable_decoding_checkbox"
+        android:checked="true"
+        tools:layout_editor_absoluteY="414dp"
+        tools:layout_editor_absoluteX="8dp" />
+
+</RelativeLayout>
