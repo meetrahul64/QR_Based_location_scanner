@@ -3,4 +3,7 @@
     <color name="colorPrimary">#86dbff</color>
     <color name="colorPrimaryDark">#9ed625</color>
     <color name="colorAccent">#bfb460</color>
+    <color name="colorMediumPurple">#8C53E5</color>
+    <color name="colorPurpleHeart">#5E2EAA</color>
+    <color name="starNormalColor">#c4c4c4</color>
 </resources>

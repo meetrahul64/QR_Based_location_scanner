@@ -12,14 +12,6 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
-    <style name="MyButton" parent="Theme.AppCompat.Light">
-        <item name="colorControlHighlight">@color/colorMediumPurple</item>
-        <item name="colorButtonNormal">@color/colorPurpleHeart</item>
-    </style>
-    <style name="RatingBar" parent="AppTheme">
-        <item name="colorControlNormal">@color/starNormalColor</item>
-        <item name="colorControlActivated">@color/starNormalColor</item>
-    </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 

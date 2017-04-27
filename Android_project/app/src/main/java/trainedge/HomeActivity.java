@@ -18,7 +18,11 @@ import android.view.MenuItem;
 import com.google.android.gms.appinvite.AppInviteInvitation;
 import com.google.firebase.auth.FirebaseAuth;
 
+import trainedge.android_project.App_About_page;
+import trainedge.android_project.Feedback;
+import trainedge.android_project.PlaceSelectionActivity;
 import trainedge.android_project.R;
+import trainedge.android_project.SimpleScannerActivity;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -36,8 +40,9 @@ public class HomeActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent scanner=new Intent(HomeActivity.this, SimpleScannerActivity.class);
+                startActivity(scanner);
+
             }
         });
 
@@ -115,21 +120,31 @@ public class HomeActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.menu_import) {
-            // Handle the camera action
+        if (id == R.id.menu_cloc) {
+            Intent IntentLocation =new Intent(HomeActivity.this, PlaceSelectionActivity.class);
+            startActivity(IntentLocation);
+            //finish();
         } else if (id == R.id.menu_gallery) {
 
         } else if (id == R.id.menu_logout) {
             FirebaseAuth.getInstance().signOut();
             Intent intent1 = new Intent(HomeActivity.this, LoginActivity.class);
             startActivity(intent1);
-            finish();
 
-        } else if (id == R.id.nav_manage) {
+
+        } else if (id == R.id.menu_feedback) {
+            Intent feedback=new Intent(HomeActivity.this, Feedback.class);
+            startActivity(feedback);
 
         } else if (id == R.id.nav_share) {
-        sendInvitation();
-        } else if (id == R.id.nav_send) {
+
+
+            sendInvitation();
+        } else if (id == R.id.nav_about) {
+            Intent obj=new Intent(HomeActivity.this, App_About_page.class);
+            startActivity(obj);
+
+
 
         }
 
