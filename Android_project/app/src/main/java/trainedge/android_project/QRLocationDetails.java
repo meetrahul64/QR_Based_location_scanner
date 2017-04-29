@@ -20,7 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
-public class QRLocationDetails extends AppCompatActivity {
+public class QRLocationDetails extends AppCompatActivity implements View.OnClickListener {
 
     private TextView tvAddress;
     private TextView tvLat;
@@ -29,6 +29,7 @@ public class QRLocationDetails extends AppCompatActivity {
     private TextView tvWiki;
     private ImageView ivPhoto1;
     private ImageView ivPhoto2;
+    private FloatingActionButton fab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +47,8 @@ public class QRLocationDetails extends AppCompatActivity {
         tvWiki = (TextView) findViewById(R.id.id_wiki_link);
         ivPhoto1 = (ImageView) findViewById(R.id.id_pic1);
         ivPhoto2 = (ImageView) findViewById(R.id.id_pic2);
+        fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(this);
     }
 
     private void loadData() {
@@ -54,6 +57,7 @@ public class QRLocationDetails extends AppCompatActivity {
         String id = extras.getString("trainedge.android_project.id");
         long timestamp = extras.getLong("trainedge.android_project.timestamp");
         getFromDatabase(id);
+
     }
 
     private void getFromDatabase(String id) {
@@ -63,14 +67,13 @@ public class QRLocationDetails extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (dataSnapshot.hasChildren()) {
                     String address = dataSnapshot.child("address").getValue(String.class);
-                    try{
+                    try {
                         String lat = String.valueOf(dataSnapshot.child("lat").getValue(Double.class));
                         String lng = String.valueOf(dataSnapshot.child("log").getValue(Double.class));
                         tvLat.setText(String.valueOf(lat));
                         tvLog.setText(String.valueOf(lng));
-                    }
-                    catch (Exception e){
-                        
+                    } catch (Exception e) {
+
                     }
                     String main_link = dataSnapshot.child("main_link").getValue(String.class);
                     String photo_1 = dataSnapshot.child("photo_1").getValue(String.class);
@@ -89,5 +92,22 @@ public class QRLocationDetails extends AppCompatActivity {
                 Toast.makeText(QRLocationDetails.this, databaseError.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.fab:
+                shareInfo();
+                break;
+        }
+    }
+
+    private void shareInfo() {
+        Intent sendIntent = new Intent();
+        sendIntent.setAction(Intent.ACTION_SEND);
+        sendIntent.putExtra(Intent.EXTRA_TEXT, "i m already ");
+        sendIntent.setType("text/plain");
+        startActivity(sendIntent);
     }
 }
