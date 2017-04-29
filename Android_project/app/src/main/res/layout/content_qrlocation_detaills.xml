@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="trainedge.android_project.QRLocationDetails"
+    tools:showIn="@layout/activity_qrlocation_detaills">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/id_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="casual"
+            android:textColor="@color/viewfinder_laser"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/id_lat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="casual"
+            android:textColor="@color/viewfinder_laser"
+            android:textStyle="bold"
+            tools:text="LATITUDE" />
+
+        <TextView
+            android:id="@+id/id_log"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="casual"
+            android:textColor="@color/viewfinder_laser"
+            android:textStyle="bold"
+            tools:text="LONGITUDE" />
+
+        <TextView
+            android:id="@+id/id_main_link"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autoLink="web"
+            android:fontFamily="casual"
+            android:textColor="@color/viewfinder_laser" />
+
+        <ImageView
+            android:id="@+id/id_pic1"
+            android:layout_width="match_parent"
+            android:layout_height="193dp"
+            android:cropToPadding="false"
+            android:padding="16dp"
+            app:srcCompat="@drawable/backgroundimg" />
+
+        <ImageView
+            android:id="@+id/id_pic2"
+            android:layout_width="match_parent"
+            android:layout_height="198dp"
+            android:cropToPadding="false"
+            android:padding="16dp"
+            app:srcCompat="@drawable/backgroundimg" />
+
+        <TextView
+            android:id="@+id/id_wiki_link"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autoLink="web"
+            android:fontFamily="casual"
+            android:text="TextView"
+            android:textColor="@color/viewfinder_laser" />
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

@@ -19,13 +19,13 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme.NoActionBar">
         <activity
-            android:name="trainedge.LoginActivity"
+            android:name=".LoginActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="trainedge.HomeActivity"
+            android:name=".HomeActivity"
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme.NoActionBar" />
 
@@ -45,7 +45,6 @@
                 <data android:scheme="@string/fb_login_protocol_scheme" />
             </intent-filter>
         </activity>
-        <activity android:name=".App_About_page" />
         <activity android:name=".splash_activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -70,15 +69,26 @@
             android:label="@string/title_activity_maps">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="trainedge.HomeActivity" />
+                android:value=".HomeActivity" />
         </activity>
 
-        <service android:name="trainedge.FetchAddressIntentService" />
+        <service android:name=".FetchAddressIntentService" />
 
         <activity android:name=".SimpleScannerActivity" />
-        <activity android:name=".Feedback"
-        android:label="HomeActivity"/>
+        <activity
+            android:name=".FeedbackActivity"
+            android:label="HomeActivity" />
+        <activity android:name=".AboutActivity"/>
 
+        <activity
+            android:name=".QRLocationDetails"
+            android:label="@string/title_activity_qrlocation_detaills"
+            android:parentActivityName=".SimpleScannerActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="trainedge.android_project.SimpleScannerActivity" />
+        </activity>
     </application>
 
 </manifest>

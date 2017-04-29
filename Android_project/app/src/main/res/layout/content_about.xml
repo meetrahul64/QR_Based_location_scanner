@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundimg"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="trainedge.android_project.AboutActivity"
+    tools:showIn="@layout/about">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="cursive"
+            android:text="@string/large_text"
+            android:textAlignment="center"
+            android:textColor="#aa6b23"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/textView7"
+
+            android:layout_marginTop="43dp"
+            android:fontFamily="sans-serif"
+            android:text="Thank You !!"
+            android:textAlignment="center"
+            android:textColor="@android:color/background_dark"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="632dp"
+            android:background="#cfd2c3"
+            android:layout_alignTop="@+id/textView7"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="50dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="serif"
+                android:text="About Developer"
+                android:textColor="@android:color/holo_red_light"
+                android:textSize="20dp"
+
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_alignTop="@+id/textView6"
+                android:layout_marginLeft="100dp"
+                android:layout_marginRight="@dimen/_4sdp"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="64dp"
+                app:srcCompat="@drawable/mypic2" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="130dp"
+                android:layout_marginTop="70dp"
+                android:fontFamily="cursive"
+                android:text="Rahul Mehta"
+                android:textColor="@android:color/holo_green_dark"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="130dp"
+                android:layout_marginTop="100dp"
+                android:text="BCA"
+                android:textAlignment="center"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="130dp"
+                android:layout_marginTop="120dp"
+                android:drawableLeft="@drawable/ic_email_black_24dp"
+                android:fontFamily="sans-serif"
+                android:text="meetrahul64@gmail.com"
+                android:textColor="#fff"
+                android:textColorLink="@color/viewfinder_laser"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </FrameLayout>
+
+    </RelativeLayout>
+</android.support.v4.widget.NestedScrollView>

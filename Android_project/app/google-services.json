@@ -93,6 +93,50 @@
           "status": 2
         }
       }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:592458132872:android:bf75b25729bac9eb",
+        "android_client_info": {
+          "package_name": "trainedge.andwroid_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "592458132872-me5cpfhfognmke8uvr4oiau1u3knhog3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "trainedge.andwroid_project",
+            "certificate_hash": "4c1ed1f623ddc44b3b4e5e832952ff0f166bcdb4"
+          }
+        },
+        {
+          "client_id": "592458132872-fvgra4smcc2ss7c70h2s34s16o5g4vgq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAL_MeMJLfy3HFU3C8l3XOA0cZ2HtG5oDY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "592458132872-fvgra4smcc2ss7c70h2s34s16o5g4vgq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
     }
   ],
   "configuration_version": "1"

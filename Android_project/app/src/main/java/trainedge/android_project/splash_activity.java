@@ -8,10 +8,6 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import trainedge.LoginActivity;
-
-import static android.R.attr.animation;
-
 public class splash_activity extends AppCompatActivity {
 
 

@@ -17,4 +17,15 @@
     <string name="no_address_found">no address found</string>
     <string name="address_found">address found</string>
     <string name="no_geocoder_available">Geocoding not available</string>
+    <string name="title_activity_qrlocation_detaills">QRLocationDetaills</string>
+    <string name="large_text">"The main idea behind the project is to develop an android application which will help tourists to find the history of the place at one instant.
+The long time which Tourists waste on searching for the better places like Historical Places, museums, parks etc. for their enjoyment in the new city or country which is totally unknown to them will get reduced, if they use this application.
+ Hence this idea was very new and useful for all those who love to travel in a new city or country on a regular basis.
+The project is about tourist guide system how the tourist will get best use of the application according to his/her point of interest.
+ Location Scanner is an Android Application that helps User to guide the location with it’s maps and history of the particular location or any monument.
+
+
+
+
+    </string>
 </resources>

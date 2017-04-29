@@ -23,7 +23,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class Feedback extends AppCompatActivity implements RatingBar.OnRatingBarChangeListener {
+public class FeedbackActivity extends AppCompatActivity implements RatingBar.OnRatingBarChangeListener {
 
     @BindView(R.id.lblHowHappy)
     TextView lblHowHappy;
@@ -47,7 +47,7 @@ public class Feedback extends AppCompatActivity implements RatingBar.OnRatingBar
         setContentView(R.layout.activity_feedback_activity);
         ButterKnife.bind(this);
         db = FirebaseDatabase.getInstance();
-        feedbackref = db.getReference("Feedback");
+        feedbackref = db.getReference("FeedbackActivity");
 
 
 
@@ -126,7 +126,7 @@ public class Feedback extends AppCompatActivity implements RatingBar.OnRatingBar
     {
         if (isAnimated)
         {
-            // Feedback has been written
+            // FeedbackActivity has been written
             txtThanks.setVisibility(View.VISIBLE);
 
             // Perfrom Animations
@@ -160,12 +160,12 @@ public class Feedback extends AppCompatActivity implements RatingBar.OnRatingBar
         String comments=txtComments.getText().toString();
         if (comments.isEmpty())
         {
-            txtComments.setError("Please give some Feedback");
+            txtComments.setError("Please give some FeedbackActivity");
             return;
         }
         //Firebase Upload
         HashMap<String,String> feed=new HashMap<>();
-        feed.put("Feedback" , comments);
+        feed.put("FeedbackActivity" , comments);
         feedbackref.push().setValue(feed);
         txtComments.setText("");
 

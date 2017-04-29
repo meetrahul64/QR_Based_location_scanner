@@ -1,9 +1,8 @@
-package trainedge;
+package trainedge.android_project;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -17,12 +16,6 @@ import android.view.MenuItem;
 
 import com.google.android.gms.appinvite.AppInviteInvitation;
 import com.google.firebase.auth.FirebaseAuth;
-
-import trainedge.android_project.App_About_page;
-import trainedge.android_project.Feedback;
-import trainedge.android_project.PlaceSelectionActivity;
-import trainedge.android_project.R;
-import trainedge.android_project.SimpleScannerActivity;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -133,7 +126,7 @@ public class HomeActivity extends AppCompatActivity
 
 
         } else if (id == R.id.menu_feedback) {
-            Intent feedback=new Intent(HomeActivity.this, Feedback.class);
+            Intent feedback=new Intent(HomeActivity.this, FeedbackActivity.class);
             startActivity(feedback);
 
         } else if (id == R.id.nav_share) {
@@ -141,7 +134,7 @@ public class HomeActivity extends AppCompatActivity
 
             sendInvitation();
         } else if (id == R.id.nav_about) {
-            Intent obj=new Intent(HomeActivity.this, App_About_page.class);
+            Intent obj=new Intent(HomeActivity.this, AboutActivity.class);
             startActivity(obj);
 
 

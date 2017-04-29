@@ -1,11 +1,12 @@
 package trainedge.android_project;
 
-import android.os.Handler;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
+import com.google.zxing.BarcodeFormat;
 import com.google.zxing.Result;
 
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
@@ -20,12 +21,11 @@ public class SimpleScannerActivity extends AppCompatActivity implements ZXingSca
         super.onCreate(savedInstanceState);
         mScannerView = new ZXingScannerView(this);
         setContentView(R.layout.activity_simple_scanner);
-
-
         ViewGroup contentFrame = (ViewGroup) findViewById(R.id.content_frame);
         mScannerView = new ZXingScannerView(this);
         contentFrame.addView(mScannerView);
     }
+
     @Override
     public void onResume() {
         super.onResume();
@@ -42,16 +42,24 @@ public class SimpleScannerActivity extends AppCompatActivity implements ZXingSca
     @Override
     public void handleResult(Result rawResult) {
         // Do something with the result here
-        Log.v(TAG, rawResult.getText()); // Prints scan results
-        Log.v(TAG, rawResult.getBarcodeFormat().toString()); // Prints the scan format (qrcode, pdf417 etc.)
-
-        Handler handler = new Handler();
+        //Log.v(TAG, rawResult.getText()); // Prints scan results
+        //Log.v(TAG, rawResult.getBarcodeFormat().toString()); // Prints the scan format (qrcode, pdf417 etc.)
+        if (rawResult.getBarcodeFormat() == BarcodeFormat.QR_CODE) {
+            Intent i = new Intent(SimpleScannerActivity.this, QRLocationDetails.class);
+            i.putExtra("trainedge.android_project.id", rawResult.getText());
+            i.putExtra("trainedge.android_project.timestamp", rawResult.getTimestamp());
+            startActivity(i);
+            finish();
+        }else{
+            Toast.makeText(this, "wow", Toast.LENGTH_SHORT).show();
+        }
+        /*Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
                 mScannerView.resumeCameraPreview(SimpleScannerActivity.this);
             }
-        }, 2000);
+        }, 2000);*/
     }
 }
 

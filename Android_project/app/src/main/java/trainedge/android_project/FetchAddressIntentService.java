@@ -1,4 +1,4 @@
-package trainedge;
+package trainedge.android_project;
 
 import android.app.IntentService;
 import android.content.Intent;
