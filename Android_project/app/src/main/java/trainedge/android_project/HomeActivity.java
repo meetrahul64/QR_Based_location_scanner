@@ -117,7 +117,7 @@ public class HomeActivity extends AppCompatActivity
             Intent IntentLocation =new Intent(HomeActivity.this, PlaceSelectionActivity.class);
             startActivity(IntentLocation);
             //finish();
-        } else if (id == R.id.menu_gallery) {
+        } else if (id == R.id.menu_history) {
 
         } else if (id == R.id.menu_logout) {
             FirebaseAuth.getInstance().signOut();

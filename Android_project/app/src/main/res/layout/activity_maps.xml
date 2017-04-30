@@ -24,6 +24,7 @@
         android:layout_marginLeft="19dp"
         android:layout_marginStart="19dp"
         android:layout_marginTop="47dp"
+        android:textColor="@color/viewfinder_laser"
         android:textSize="16sp" />
 
     <ProgressBar
