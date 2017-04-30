@@ -33,7 +33,7 @@ public class HomeActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent scanner=new Intent(HomeActivity.this, SimpleScannerActivity.class);
+                Intent scanner=new Intent(HomeActivity.this, ScanActivity.class);
                 startActivity(scanner);
 
             }

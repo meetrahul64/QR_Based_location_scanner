@@ -28,4 +28,19 @@ The project is about tourist guide system how the tourist will get best use of t
 
 
     </string>
+    <string name="flash_on">flash on</string>
+    <string name="flash_off">flash off</string>
+    <string name="auto_focus_on">auto foucs on</string>
+    <string name="auto_focus_off">focus off</string>
+    <string name="select_a_camera">Please select a Camera</string>
+    <string name="ok_button">Ok</string>
+    <string name="cancel_button">Cancel</string>
+    <string name="choose_formats">select format</string>
+
+    <string name="scaling_sample">Scaling Sample</string>
+    <string name="toggle_flash">Flash</string>
+    <string name="formats">Formats</string>
+    <string name="send_to">share with</string>
+
+    <bool name="cameraPreviewShouldFillView">true</bool>
 </resources>

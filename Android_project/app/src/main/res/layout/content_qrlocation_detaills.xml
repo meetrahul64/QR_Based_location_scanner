@@ -5,72 +5,106 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="trainedge.android_project.QRLocationDetails"
-    tools:showIn="@layout/activity_qrlocation_detaills">
+    tools:context=".ShowInfoActivity"
+    >
 
     <LinearLayout
+        android:id="@+id/llContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/transparent"
+        android:layout_margin="16dp"
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/id_address"
+            android:id="@+id/tvAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="casual"
-            android:textColor="@color/viewfinder_laser"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/id_lat"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="casual"
-            android:textColor="@color/viewfinder_laser"
-            android:textStyle="bold"
-            tools:text="LATITUDE" />
-
-        <TextView
-            android:id="@+id/id_log"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="casual"
-            android:textColor="@color/viewfinder_laser"
-            android:textStyle="bold"
-            tools:text="LONGITUDE" />
-
-        <TextView
-            android:id="@+id/id_main_link"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:autoLink="web"
-            android:fontFamily="casual"
-            android:textColor="@color/viewfinder_laser" />
-
-        <ImageView
-            android:id="@+id/id_pic1"
-            android:layout_width="match_parent"
-            android:layout_height="193dp"
-            android:cropToPadding="false"
+            android:background="?attr/selectableItemBackground"
+            android:fontFamily="sans-serif-smallcaps"
             android:padding="16dp"
-            app:srcCompat="@drawable/backgroundimg" />
+            android:textAlignment="center"
+            android:textColor="#333"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:text="Address" />
 
-        <ImageView
-            android:id="@+id/id_pic2"
-            android:layout_width="match_parent"
-            android:layout_height="198dp"
-            android:cropToPadding="false"
-            android:padding="16dp"
-            app:srcCompat="@drawable/backgroundimg" />
-
-        <TextView
-            android:id="@+id/id_wiki_link"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:autoLink="web"
-            android:fontFamily="casual"
-            android:text="TextView"
-            android:textColor="@color/viewfinder_laser" />
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackground"
+                android:padding="16dp"
+                android:textAlignment="center"
+                android:textColor="#333"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:text="Location :" />
+
+            <TextView
+                android:id="@+id/tvlatitude"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackground"
+                android:fontFamily="monospace"
+                android:padding="14dp"
+                android:textAlignment="center"
+                android:textColor="#333"
+                android:textSize="18sp"
+                tools:text="latitude" />
+
+            <TextView
+                android:id="@+id/tvlongitude"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackground"
+                android:fontFamily="monospace"
+                android:padding="14dp"
+                android:textAlignment="center"
+                android:textColor="#333"
+                android:textSize="18sp"
+                tools:text="longitude" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnGoogle"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="View more info Google" />
+
+        <Button
+            android:id="@+id/btnMainLink"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="View on Main Website" />
+
+        <Button
+            android:id="@+id/btnWiki"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="VIEW more on wikipedia" />
+
+        <Button
+            android:id="@+id/btnViewImages"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="View images on Google" />
+
+        <Button
+            android:id="@+id/btnMap"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Navigate on Map" />
     </LinearLayout>
+
 </android.support.v4.widget.NestedScrollView>
