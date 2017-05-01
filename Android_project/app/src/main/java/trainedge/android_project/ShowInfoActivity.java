@@ -73,8 +73,8 @@ public class ShowInfoActivity extends AppCompatActivity implements View.OnClickL
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (dataSnapshot.hasChildren()) {
                     String address = dataSnapshot.child("address").getValue(String.class);
-                    String latitude = dataSnapshot.child("lat").getValue(String.class);
-                    String longitude = dataSnapshot.child("lng").getValue(String.class);
+                    String latitude = String.valueOf(dataSnapshot.child("lat").getValue(Double.class));
+                    String longitude = String.valueOf(dataSnapshot.child("log").getValue(Double.class));
                     String main = dataSnapshot.child("main_link").getValue(String.class);
                     String photo1 = dataSnapshot.child("photo_1").getValue(String.class);
                     String photo2 = dataSnapshot.child("photo_2").getValue(String.class);
@@ -163,6 +163,7 @@ public class ShowInfoActivity extends AppCompatActivity implements View.OnClickL
                 break;
             case R.id.btnViewImages:
                 launchIntent("https://www.google.co.in/search?q=" + tvAddress.getText().toString() + "&tbm=isch");
+
                 break;
             case R.id.btnWiki:
                 launchIntent(btnWiki.getTag().toString());
