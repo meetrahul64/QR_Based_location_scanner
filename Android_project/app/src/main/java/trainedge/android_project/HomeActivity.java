@@ -118,6 +118,9 @@ public class HomeActivity extends AppCompatActivity
             startActivity(IntentLocation);
             //finish();
         } else if (id == R.id.menu_history) {
+            Intent history1 = new Intent(HomeActivity.this, histroy_activity.class);
+            startActivity(history1);
+
 
         } else if (id == R.id.menu_logout) {
             FirebaseAuth.getInstance().signOut();
