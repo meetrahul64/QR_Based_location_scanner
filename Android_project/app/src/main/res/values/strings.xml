@@ -43,4 +43,5 @@ The project is about tourist guide system how the tourist will get best use of t
     <string name="send_to">share with</string>
 
     <bool name="cameraPreviewShouldFillView">true</bool>
+    <string name="title_activity_history_">History_Activity</string>
 </resources>

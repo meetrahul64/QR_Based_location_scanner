@@ -83,7 +83,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="trainedge.android_project.ScanActivity" />
         </activity>
-        <activity android:name=".histroy_activity"></activity>
+        <activity
+            android:name=".History_Activity"
+            android:label="@string/title_activity_history_"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
