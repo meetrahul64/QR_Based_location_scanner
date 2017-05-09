@@ -25,7 +25,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
- class HistoryActivity extends AppCompatActivity {
+public class History_Activity extends AppCompatActivity {
 
     private RecyclerView rvHistory;
 
@@ -78,7 +78,7 @@ import java.util.ArrayList;
                     @Override
                     public void onCancelled(DatabaseError databaseError) {
                         if (databaseError != null) {
-                            Toast.makeText(HistoryActivity.this, databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(History_Activity.this, databaseError.getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
@@ -99,7 +99,11 @@ import java.util.ArrayList;
         public void onBindViewHolder(HistoryAdapter.Holder holder, int position) {
             HistoryAdapter.HistoryModel model = modelList.get(position);
             Picasso.with(context).load(model.getPhoto()).into(holder.ivLocImage);
-            holder.tvLocName.setText(model.getName());
+            try{
+                holder.tvLocName.setText(model.getAddress());
+            }catch (Exception e){
+                
+            }
         }
 
         @Override
@@ -123,14 +127,15 @@ import java.util.ArrayList;
             String photo;
             String id;
             String key;
+            String address;
             long time;
 
             public HistoryModel(DataSnapshot snapshot) {
                 id = snapshot.child("id").getValue(String.class);
-                name = snapshot.child("name").getValue(String.class);
                 time = snapshot.child("timestamp").getValue(Long.class);
-                photo = snapshot.child("id").getValue(String.class);
+                photo = snapshot.child("photo").getValue(String.class);
                 key = snapshot.getKey();
+                address= snapshot.child("address").getValue(String.class);
             }
 
             public String getName() {
@@ -144,6 +149,10 @@ import java.util.ArrayList;
 
             public String getId() {
                 return id;
+            }
+
+            public String getAddress() {
+                return address;
             }
         }
     }

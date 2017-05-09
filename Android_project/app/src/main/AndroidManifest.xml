@@ -40,6 +40,11 @@
                 <data android:scheme="@string/fb_login_protocol_scheme" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".History_Activity"
+            android:label="HISTORY"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".FeedbackActivity"></activity>
         <activity android:name=".splash_activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -69,11 +74,11 @@
 
         <service android:name=".FetchAddressIntentService" />
 
-        <activity android:name=".ScanActivity" />
-        <activity
-            android:name=".FeedbackActivity"
-            android:label="HomeActivity" />
-        <activity android:name=".AboutActivity" />
+        <activity android:name=".ScanActivity"
+            android:label="QR Scanner"/>
+
+        <activity android:name=".AboutActivity"
+            android:label="AboutUs"/>
         <activity
             android:name=".ShowInfoActivity"
             android:label="@string/title_activity_qrlocation_detaills"
@@ -83,10 +88,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="trainedge.android_project.ScanActivity" />
         </activity>
-        <activity
-            android:name=".History_Activity"
-            android:label="@string/title_activity_history_"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+
     </application>
 
 </manifest>

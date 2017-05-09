@@ -118,7 +118,7 @@ public class HomeActivity extends AppCompatActivity
             startActivity(IntentLocation);
             //finish();
         } else if (id == R.id.menu_history) {
-            Intent history1 = new Intent(HomeActivity.this, histroy_activity.class);
+            Intent history1 = new Intent(HomeActivity.this, History_Activity.class);
             startActivity(history1);
 
 

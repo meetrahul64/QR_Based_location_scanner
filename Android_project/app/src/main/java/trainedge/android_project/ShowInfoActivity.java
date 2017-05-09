@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -22,6 +23,9 @@ import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Request;
 
+import java.util.HashMap;
+
+import static android.R.attr.name;
 import static trainedge.android_project.ScanActivity.LOCATION_ID;
 
 public class ShowInfoActivity extends AppCompatActivity implements View.OnClickListener {
@@ -79,7 +83,8 @@ public class ShowInfoActivity extends AppCompatActivity implements View.OnClickL
                     String photo1 = dataSnapshot.child("photo_1").getValue(String.class);
                     String photo2 = dataSnapshot.child("photo_2").getValue(String.class);
                     String web = dataSnapshot.child("wiki_link").getValue(String.class);
-                    updateUI(address, latitude, longitude, main, photo1, photo2, web);
+                    String id = dataSnapshot.getKey();
+                    updateUI(address, latitude, longitude, main, photo1, photo2, web,id);
 
                 }
             }
@@ -96,7 +101,7 @@ public class ShowInfoActivity extends AppCompatActivity implements View.OnClickL
 
     }
 
-    private void updateUI(String address, String latitude, String longitude, String name, String photo1, String photo2, String web) {
+    private void updateUI(String address, String latitude, String longitude, String name, String photo1, String photo2, String web, String id) {
         dialog.dismiss();
         try {
             tvAddress.setText(address);
@@ -107,10 +112,28 @@ public class ShowInfoActivity extends AppCompatActivity implements View.OnClickL
             Picasso.with(this).load(photo1).error(R.drawable.backgrnd).into(appBarImage);
             btnWiki.setTag(web);
             btnMainLink.setTag(name);
+            try {
+                String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+                DatabaseReference history = FirebaseDatabase.getInstance().getReference("history").child(uid);
+                HashMap<String, Object> historyInfo = new HashMap<String, Object>();
+                historyInfo.put("id", id);
+                historyInfo.put("name", name);
+                historyInfo.put("timestamp", System.currentTimeMillis());
+                historyInfo.put("photo", photo2);
+                historyInfo.put("address", address);
+                history.push().setValue(historyInfo);
+            } catch (NullPointerException e) {
+                Toast.makeText(this, "user details could not be fetched", Toast.LENGTH_SHORT).show();
+            } catch (Exception e) {
+                Toast.makeText(this, "could not save in history", Toast.LENGTH_SHORT).show();
+                e.printStackTrace();
+            }
+
 
         } catch (Exception e) {
             Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
         }
+
     }
 
     private void setupListeners() {
