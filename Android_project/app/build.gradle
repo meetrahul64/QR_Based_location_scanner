@@ -10,6 +10,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
     }
     buildTypes {
         release {
@@ -41,7 +42,14 @@ dependencies {
     compile 'com.google.android.gms:play-services-location:10.2.0'
     compile 'me.dm7.barcodescanner:zxing:1.8.4'
     compile 'com.squareup.picasso:picasso:2.3.2'
+    compile 'com.android.support:support-v4:25.2.0'
+    compile 'com.android.support:support-vector-drawable:25.2.0'
 }
+
+
+
+
+
 
 
 

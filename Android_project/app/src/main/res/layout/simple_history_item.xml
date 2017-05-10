@@ -13,25 +13,25 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="169dp">
 
         <ImageView
             android:id="@+id/ivlocImage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:scaleType="centerCrop"
-             />
+            android:scaleType="centerCrop" />
 
-        <TextView
-            android:id="@+id/ivLocName"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-
-            android:gravity="bottom|left"
-            android:padding="16dp"
-            android:text="Location Name"
-            android:textColor="#fff"
-            android:textSize="24sp"
-            android:textStyle="bold" />
     </FrameLayout>
+
+    <TextView
+        android:id="@+id/ivLocName"
+        android:layout_width="match_parent"
+        android:layout_height="198dp"
+
+        android:gravity="bottom|left"
+        android:padding="16dp"
+        android:text="Location Name"
+        android:textColor="@color/com_facebook_button_background_color_focused"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 </android.support.v7.widget.CardView>

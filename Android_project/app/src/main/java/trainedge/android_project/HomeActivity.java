@@ -1,6 +1,7 @@
 package trainedge.android_project;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.util.Log;
@@ -21,10 +22,23 @@ public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     public static final int REQUEST_INVITE = 232;
     public static final String TAG = "HomeActivity";
+    private SharedPreferences pref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        pref = getSharedPreferences("setting_pref", MODE_PRIVATE);
+
+        String theme = pref.getString("theme", "White");
+        if (theme.equals("Blue")) {
+            setTheme(R.style.Bluetheme);
+        } else if (theme.equals("Black")) {
+            setTheme(R.style.BlackTheme);
+        } else if (theme.equals("Pink")) {
+            setTheme(R.style.PinkTheme);
+        } else {
+            setTheme(R.style.WhiteTheme);
+        }
         setContentView(R.layout.activity_home);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -33,7 +47,7 @@ public class HomeActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent scanner=new Intent(HomeActivity.this, ScanActivity.class);
+                Intent scanner = new Intent(HomeActivity.this, ScanActivity.class);
                 startActivity(scanner);
 
             }
@@ -58,6 +72,7 @@ public class HomeActivity extends AppCompatActivity
             super.onBackPressed();
         }
     }
+
     private void sendInvitation() {
         Intent intent = new AppInviteInvitation.IntentBuilder(getString(R.string.invitation_title))
                 .setMessage(getString(R.string.invitation_message))
@@ -101,6 +116,8 @@ public class HomeActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Intent setIntent = new Intent(HomeActivity.this, Settings_activity.class);
+            startActivity(setIntent);
             return true;
         }
 
@@ -114,7 +131,7 @@ public class HomeActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.menu_cloc) {
-            Intent IntentLocation =new Intent(HomeActivity.this, PlaceSelectionActivity.class);
+            Intent IntentLocation = new Intent(HomeActivity.this, PlaceSelectionActivity.class);
             startActivity(IntentLocation);
             //finish();
         } else if (id == R.id.menu_history) {
@@ -129,7 +146,7 @@ public class HomeActivity extends AppCompatActivity
 
 
         } else if (id == R.id.menu_feedback) {
-            Intent feedback=new Intent(HomeActivity.this, FeedbackActivity.class);
+            Intent feedback = new Intent(HomeActivity.this, FeedbackActivity.class);
             startActivity(feedback);
 
         } else if (id == R.id.nav_share) {
@@ -137,9 +154,8 @@ public class HomeActivity extends AppCompatActivity
 
             sendInvitation();
         } else if (id == R.id.nav_about) {
-            Intent obj=new Intent(HomeActivity.this, AboutActivity.class);
+            Intent obj = new Intent(HomeActivity.this, AboutActivity.class);
             startActivity(obj);
-
 
 
         }

@@ -7,17 +7,14 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
-
     <style name="MyButton" parent="Theme.AppCompat.Light">
         <item name="colorControlHighlight">@color/colorMediumPurple</item>
         <item name="colorButtonNormal">@color/colorPurpleHeart</item>
     </style>
-
     <style name="RatingBar" parent="AppTheme">
         <item name="colorControlNormal">@color/starNormalColor</item>
         <item name="colorControlActivated">@color/starNormalColor</item>
@@ -32,7 +29,6 @@
         <item name="windowActionBar">false</item>
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowContentOverlay">@null</item>
-
         <item name="colorPrimary">@color/primary</item>
         <!-- darker variant for the status bar and contextual app bars -->
         <item name="colorPrimaryDark">@color/primary_dark</item>
@@ -53,4 +49,28 @@
     <style name="AppTheme.NoActionBar.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.NoActionBar.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="WhiteTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">#FFA8ABA8</item>
+        <item name="colorPrimaryDark">#FFF4CAB5</item>
+        <item name="colorAccent">#FFFFF3ED</item>
+    </style>
+    <style name="PinkTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">#f8dcfa</item>
+        <item name="colorPrimaryDark">#d271cf</item>
+        <item name="colorAccent">#f87dff</item>
+    </style>
+
+
+    <style name="BlackTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">#234f22</item>
+        <item name="colorPrimaryDark">#A5B1A5</item>
+        <item name="colorAccent">#f1f</item>
+    </style>
+
+    <style name="Bluetheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">#00f</item>
+        <item name="colorPrimaryDark">#89f</item>
+        <item name="colorAccent">#8695ED</item>
+    </style>
+
 </resources>
