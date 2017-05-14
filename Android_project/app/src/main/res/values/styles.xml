@@ -7,14 +7,17 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+
     <style name="MyButton" parent="Theme.AppCompat.Light">
         <item name="colorControlHighlight">@color/colorMediumPurple</item>
         <item name="colorButtonNormal">@color/colorPurpleHeart</item>
     </style>
+
     <style name="RatingBar" parent="AppTheme">
         <item name="colorControlNormal">@color/starNormalColor</item>
         <item name="colorControlActivated">@color/starNormalColor</item>
@@ -49,11 +52,13 @@
     <style name="AppTheme.NoActionBar.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.NoActionBar.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
     <style name="WhiteTheme" parent="Theme.AppCompat.NoActionBar">
         <item name="colorPrimary">#FFA8ABA8</item>
         <item name="colorPrimaryDark">#FFF4CAB5</item>
         <item name="colorAccent">#FFFFF3ED</item>
     </style>
+
     <style name="PinkTheme" parent="Theme.AppCompat.NoActionBar">
         <item name="colorPrimary">#f8dcfa</item>
         <item name="colorPrimaryDark">#d271cf</item>

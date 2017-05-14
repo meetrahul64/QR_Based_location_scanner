@@ -32,11 +32,22 @@ public class Settings_activity extends AppCompatActivity implements  AdapterView
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings_activity);
+        /*Add in Oncreate() funtion after setContentView()*/
+// initiate a Switch
+        Switch simpleSwitch = (Switch) findViewById(R.id.switch1);
+
+//set the current state of a Switch
+        simpleSwitch.setChecked(true);
+        simpleSwitch.setChecked(false);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         pref = getSharedPreferences("setting_pref", MODE_PRIVATE);
+        // initiate a Switch
+        //Switch simpleSwitch = (Switch) findViewById(R.id.switch1);
 
+// check current state of a Switch (true or false).
+        Boolean switchState = simpleSwitch.isChecked();
 
         spinner = (Spinner) findViewById(R.id.spn_themes);
 // Create an ArrayAdapter using the string array and a default spinner layout

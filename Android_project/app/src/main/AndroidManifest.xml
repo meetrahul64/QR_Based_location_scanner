@@ -77,8 +77,7 @@
         <activity
             android:name=".ScanActivity"
             android:label="QR Scanner"
-            android:parentActivityName=".HomeActivity"/>
-
+            android:parentActivityName=".HomeActivity" />
         <activity
             android:name=".AboutActivity"
             android:label="AboutUs" />
@@ -94,8 +93,7 @@
         <activity
             android:name=".Settings_activity"
             android:label="@string/title_activity_settings"
-            android:parentActivityName=".HomeActivity">
-        </activity>
+            android:parentActivityName=".HomeActivity"></activity>
     </application>
 
 </manifest>

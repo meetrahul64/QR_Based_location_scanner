@@ -194,7 +194,7 @@ public class ShowInfoActivity extends AppCompatActivity implements View.OnClickL
             case R.id.fab:
                 Intent sendIntent = new Intent();
                 sendIntent.setAction(Intent.ACTION_SEND);
-                sendIntent.putExtra(Intent.EXTRA_TEXT, "hey download my app" +
+                sendIntent.putExtra(Intent.EXTRA_TEXT, "hey my location is"+tvAddress+ "hey download my app" +
                         " QR location scanner from play store" +
                         "https://play.google.com/store/apps/details?id=" + PACKAGE_NAME);
                 sendIntent.setType("text/plain");
