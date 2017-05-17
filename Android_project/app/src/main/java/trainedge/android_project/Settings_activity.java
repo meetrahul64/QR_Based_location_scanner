@@ -17,7 +17,7 @@ import android.widget.Switch;
 import android.widget.Toast;
 
 
-public class Settings_activity extends AppCompatActivity implements  AdapterView.OnItemSelectedListener, View.OnClickListener {
+public class Settings_activity extends AppCompatActivity implements AdapterView.OnItemSelectedListener, View.OnClickListener, CompoundButton.OnCheckedChangeListener {
 
     public static final String TAG = "Settings";
     private Switch notif;
@@ -26,6 +26,7 @@ public class Settings_activity extends AppCompatActivity implements  AdapterView
     private ArrayAdapter<CharSequence> adapter1;
     private Spinner spinner;
     private Spinner spinner1;
+    private Switch simpleSwitch;
 
 
     @Override
@@ -34,20 +35,14 @@ public class Settings_activity extends AppCompatActivity implements  AdapterView
         setContentView(R.layout.activity_settings_activity);
         /*Add in Oncreate() funtion after setContentView()*/
 // initiate a Switch
-        Switch simpleSwitch = (Switch) findViewById(R.id.switch1);
+        simpleSwitch = (Switch) findViewById(R.id.switch1);
 
-//set the current state of a Switch
-        simpleSwitch.setChecked(true);
-        simpleSwitch.setChecked(false);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         pref = getSharedPreferences("setting_pref", MODE_PRIVATE);
         // initiate a Switch
         //Switch simpleSwitch = (Switch) findViewById(R.id.switch1);
-
-// check current state of a Switch (true or false).
-        Boolean switchState = simpleSwitch.isChecked();
 
         spinner = (Spinner) findViewById(R.id.spn_themes);
 // Create an ArrayAdapter using the string array and a default spinner layout
@@ -59,12 +54,10 @@ public class Settings_activity extends AppCompatActivity implements  AdapterView
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
 
-
         updateUI();
 
-
+        simpleSwitch.setOnCheckedChangeListener(this);
     }
-
 
 
     @Override
@@ -77,6 +70,7 @@ public class Settings_activity extends AppCompatActivity implements  AdapterView
 
         spinner.setSelection(pref.getInt("themepos", 0));
 
+        simpleSwitch.setChecked(pref.getBoolean("saver", false));
     }
 
     @Override
@@ -100,6 +94,11 @@ public class Settings_activity extends AppCompatActivity implements  AdapterView
     @Override
     public void onClick(View v) {
 
+    }
+
+    @Override
+    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+        pref.edit().putBoolean("saver",isChecked).apply();
     }
 
     //FirebaseAuth.getInstance().signOut();
